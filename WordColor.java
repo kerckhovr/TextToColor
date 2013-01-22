@@ -1,3 +1,9 @@
+/*
+ * Developer : Richard Kerckhove (kerckhovr@sou.edu)
+ * Date : 01/21/2013
+ * All code (c)2013 Richard Kerckhove All Rights Reserved
+ */
+
 import java.awt.*;
 
 public class WordColor {

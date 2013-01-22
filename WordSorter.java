@@ -1,5 +1,9 @@
 
-
+/*
+ * Developer : Richard Kerckhove (kerckhovr@sou.edu)
+ * Date : 01/21/2013
+ * All code (c)2013 Richard Kerckhove All Rights Reserved
+ */
 
 import java.io.*;
 import java.util.*;
@@ -51,9 +55,10 @@ public class WordSorter {
     
     public static void main (String [] args){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter the text: ");
-        enteredText = scan.nextLine();
-        textArray = scanText(enteredText);  
-        colorize(textArray);
+        //System.out.println("Please enter the text: ");
+        //enteredText = scan.nextLine();
+        //textArray = scanText(enteredText);  
+        //colorize(textArray);
+        TextToColorGUI thing = new TextToColorGUI();
     }
 }

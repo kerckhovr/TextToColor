@@ -1,7 +1,8 @@
-/** Created by Richard Kerckhove
-*   ColorValue.java
-*   This is an object to hold RGB value.
-*/
+/*
+ * Developer : Richard Kerckhove (kerckhovr@sou.edu)
+ * Date : 01/21/2013
+ * All code (c)2013 Richard Kerckhove All Rights Reserved
+ */
 public class ColorValue {
     private int red;
     private int green;
