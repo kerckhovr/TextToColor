@@ -13,35 +13,35 @@ import javax.swing.event.*;
 
 public class TextToColorGUI extends JFrame implements ActionListener {
 
-    JTextField  textField;
-    Container   content;
-    JFrame      mainWindow;
-    JPanel      rightPanel;
-    JPanel      leftPanel;
-    JCheckBox   lightOptionBox;
-    JCheckBox   darkOptionBox;
-    JLabel      lightButtonLabel;
-    JLabel      darkButtonLabel;
+    private Container   content;
+    private JMenuBar    menuBar;
+    private JMenu       fileMenu, editMenu;
+    private JMenuItem   openItem, saveItem, closeItem;
+    private JMenuItem   copyItem, cutItem, pasteItem;
+    private JTextField  textField;    
+    private JFrame      mainWindow;
+    private JPanel      rightPanel, leftPanel;
+    private JCheckBox   lightOptionBox, darkOptionBox;
+
     
     public TextToColorGUI() {
         super("Text to Color");             
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
+        menuBar          = new JMenuBar();
+        initializeFileMenu();
+        initializeEditMenu();
         mainWindow       = new JFrame("Text to Color");
         rightPanel       = new JPanel();
-        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
         leftPanel        = new JPanel();
         lightOptionBox   = new JCheckBox("Make Colors Lighter");
         darkOptionBox    = new JCheckBox("Make Colors Darker");
-       
+                
+        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
+        mainWindow.setJMenuBar(menuBar);
         
         rightPanel.add(lightOptionBox);
-
-        rightPanel.add(Box.createHorizontalGlue());
         rightPanel.add(darkOptionBox);
 
-        
         
         mainWindow.setSize(400, 400);
         content = mainWindow.getContentPane();
@@ -52,9 +52,31 @@ public class TextToColorGUI extends JFrame implements ActionListener {
         content.add(new JButton("Colorize"), BorderLayout.SOUTH);
         content.add(rightPanel, BorderLayout.EAST);
         content.add(leftPanel,  BorderLayout.WEST);
-        
        
         mainWindow.setVisible(true);
+    }
+    
+    private void initializeFileMenu() {
+        fileMenu         = new JMenu("File");
+        openItem         = new JMenuItem("Open");
+        saveItem         = new JMenuItem("Save");
+        closeItem        = new JMenuItem("Close");
+        fileMenu.add(openItem);
+        fileMenu.add(saveItem);
+        fileMenu.addSeparator();
+        fileMenu.add(closeItem);
+        menuBar.add(fileMenu);
+    }
+    
+    private void initializeEditMenu() {
+        editMenu         = new JMenu("Edit");
+        copyItem         = new JMenuItem("Copy");
+        cutItem          = new JMenuItem("Cut");
+        pasteItem        = new JMenuItem("Paste");
+        editMenu.add(copyItem);
+        editMenu.add(cutItem);
+        editMenu.add(pasteItem);
+        menuBar.add(editMenu);
     }
     
     public void actionPerformed(ActionEvent e){

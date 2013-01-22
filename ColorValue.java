@@ -18,12 +18,24 @@ public class ColorValue {
         red += value;
     }
     
+    public void subRed(int value) {
+        red -= value;
+    }
+    
     public void addGreen(int value) {
         green += value;
     }
     
+    public void subGreen(int value) {
+        green -= value;
+    }
+    
     public void addBlue(int value) {
         blue += value;
+    }
+    
+    public void sunBlue(int value) {
+        blue -= value;
     }
     
     public String toString () {
